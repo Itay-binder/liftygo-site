@@ -26,6 +26,7 @@ add_action("wp_head", function() {
         2362, // הצטרפות מובילים — הטבת עצמאות (קמפיין)
         2869, // הצטרפות מובילים — תקופת המלחמה (קמפיין)
         2894, // כמה עולה הובלת דירה — ממתין לאישור אינדוקס
+        2915, // איך לבחור מוביל דירה — ממתין לאישור אינדוקס
     ];
     if (in_array(get_queried_object_id(), $noindex_ids)) {
         echo '<meta name="robots" content="noindex, nofollow" />' . "\n";

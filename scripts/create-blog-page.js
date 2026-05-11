@@ -144,6 +144,18 @@ const BLOG_CONTENT = `<link href="https://fonts.googleapis.com/css2?family=Rubik
           </div>
         </a>
 
+        <a href="https://liftygo.co.il/how-to-choose-movers/" class="article-card" style="text-decoration:none">
+          <div class="card-thumb thumb-guides" style="background:linear-gradient(135deg,#4f1d9e,#7434db)">
+            <span class="card-cat">מדריכים · טיפים</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>מאי 2026</span><span>·</span><span>6 דקות קריאה</span></div>
+            <div class="card-title">איך לבחור מוביל דירה — המדריך המלא 2026</div>
+            <div class="card-excerpt">5 דברים שחייבים לבדוק לפני שחותמים: רישיון, ביטוח, חוות דעת, מחיר בכתב — וכל דגלי האזהרה.</div>
+            <span class="card-link">קרא עוד ←</span>
+          </div>
+        </a>
+
       </div>
     </div>
 
@@ -160,6 +172,17 @@ const BLOG_CONTENT = `<link href="https://fonts.googleapis.com/css2?family=Rubik
             <div class="card-meta"><span>מאי 2026</span><span>·</span><span>7 דקות קריאה</span></div>
             <div class="card-title">כמה עולה הובלת דירה? מדריך מחירים 2026</div>
             <div class="card-excerpt">מה משפיע על המחיר, טווחי מחירים לפי גודל דירה, ו-5 דרכים לחסוך בהובלה.</div>
+            <span class="card-link">קרא עוד ←</span>
+          </div>
+        </a>
+        <a href="https://liftygo.co.il/how-to-choose-movers/" class="article-card" style="text-decoration:none">
+          <div class="card-thumb thumb-guides" style="background:linear-gradient(135deg,#4f1d9e,#7434db)">
+            <span class="card-cat">טיפים להובלה</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>מאי 2026</span><span>·</span><span>6 דקות קריאה</span></div>
+            <div class="card-title">איך לבחור מוביל דירה — המדריך המלא 2026</div>
+            <div class="card-excerpt">5 דברים שחייבים לבדוק לפני שחותמים: רישיון, ביטוח, חוות דעת, מחיר בכתב — וכל דגלי האזהרה.</div>
             <span class="card-link">קרא עוד ←</span>
           </div>
         </a>
@@ -207,6 +230,18 @@ const BLOG_CONTENT = `<link href="https://fonts.googleapis.com/css2?family=Rubik
             <div class="card-meta"><span>פברואר 2026</span><span>·</span><span>6 דקות קריאה</span></div>
             <div class="card-title">איך למצוא עבודות הובלה — המדריך למוביל המתחיל</div>
             <div class="card-excerpt">המדריך המלא למוביל המתחיל — לידים, פלטפורמות, ובניית הכנסה קבועה מהובלות.</div>
+            <span class="card-link">קרא עוד ←</span>
+          </div>
+        </a>
+
+        <a href="https://liftygo.co.il/how-to-choose-movers/" class="article-card" style="text-decoration:none">
+          <div class="card-thumb thumb-guides" style="background:linear-gradient(135deg,#4f1d9e,#7434db)">
+            <span class="card-cat">מדריכים</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>מאי 2026</span><span>·</span><span>6 דקות קריאה</span></div>
+            <div class="card-title">איך לבחור מוביל דירה — המדריך המלא 2026</div>
+            <div class="card-excerpt">5 דברים שחייבים לבדוק לפני שחותמים: רישיון, ביטוח, חוות דעת, מחיר בכתב — וכל דגלי האזהרה.</div>
             <span class="card-link">קרא עוד ←</span>
           </div>
         </a>
