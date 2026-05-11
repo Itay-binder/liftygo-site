@@ -25,6 +25,12 @@ const CONFIG = {
 
 // Keywords to track, organized by category
 const KEYWORDS = {
+  'מותג': [
+    'liftygo',
+    'ליפטיגו',
+    'liftygo הובלה',
+    'ליפטיגו הובלה',
+  ],
   'מילות מפתח ראשיות': [
     'הובלת דירה',
     'מוביל דירה',
