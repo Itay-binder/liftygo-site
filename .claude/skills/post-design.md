@@ -1,164 +1,119 @@
-# LiftyGo Post Designer
+# LiftyGo Post Designer — Article Template Skill
 
 ## Purpose
-Design and export branded social media posts for liftygo.co.il. Generates HTML files that render as pixel-perfect branded posts, ready for screenshot/export.
+Generate a complete, branded HTML article page for liftygo.co.il.
+Each invocation fills the template (`posts/article-template.html`) with new content,
+saves it as a new dated file, and sends a WhatsApp notification via GreenAPI.
 
-## Brand System (Always Apply)
+## When Invoked
+User types `/post-design` with a topic, keyword, or audience.
 
-**Colors:**
-- Hero gradient: `linear-gradient(135deg, #8952E0 0%, #4F1D9E 100%)`  
-- Light gradient: `linear-gradient(180deg, #FFFFFF 0%, #E2CCFF 100%)`
-- Primary blue: `#6EC1E4` | Accent green: `#61CE70` | Lavender: `#E2CCFF`
-- Purple CTA: `#7434DB` | Dark text: `#2D2152` | Gray: `#7A7A7A`
+---
 
-**Fonts:** Rubik (Hebrew, wght 400–800) + Roboto (Latin). Always RTL (`dir="rtl"`).
+## Brand Design System (Apply Exactly)
 
-**Voice:** ידידותי, ישיר, אמוג'י פה-ושם, CTAs ישירות.
+### Colors
+| Token        | Hex       | Usage                          |
+|-------------|-----------|--------------------------------|
+| --brand      | #A379E7   | Accents, borders, highlights   |
+| --brand-2    | #7434DB   | CTA buttons, links             |
+| --brand-light| #E2CCFF   | Section backgrounds, tags      |
+| --brand-mid  | #D3BEF4   | Gradient light stop            |
+| --brand-dark | #2D2152   | All headings                   |
+| body text    | #374151   | Paragraphs                     |
+| muted        | #6b7280   | Meta, labels                   |
+| surface      | #f9f6fd   | Card/callout backgrounds       |
+
+**Gradient (hero/sections):** `linear-gradient(180deg, #FFFFFF 0%, #E2CCFF 100%)`
+**Gradient (buttons/CTA):** `linear-gradient(135deg, #A379E7, #7434DB)`
+**Inline highlight (mm-hl):** `linear-gradient(135deg, #d3bef4, #b795ec)` + color `#2D2152`
+
+### Typography
+- Font: **Rubik** (Google Fonts, Hebrew-ready, wght 400–900)
+- H1: Rubik 900, `clamp(28px, 5vw, 52px)`, color `#2D2152`
+- H2: Rubik 800, `clamp(20px, 3vw, 28px)`, color `#2D2152`
+- H3: Rubik 700, `clamp(17px, 2.2vw, 22px)`, color `#2D2152`
+- Body: Rubik 400, 17px, color `#374151`, line-height 1.75
+- Direction: **RTL** always (`dir="rtl"`, `text-align: right`)
+
+### Components Available in Template
+| Component      | Class / Element        | When to Use                        |
+|---------------|------------------------|------------------------------------|
+| Info callout  | `.callout.info`        | Key takeaways, important notes     |
+| Tip callout   | `.callout.tip`         | Best practices, recommendations    |
+| Warn callout  | `.callout.warn`        | Cautions, warnings                 |
+| Stat strip    | `.stat-strip > .stat-card` | 2–4 key numbers                |
+| Inline CTA    | `.cta-inline`          | Mid-article conversion point       |
+| Table         | `.table-wrapper > table` | Comparisons                      |
+| Highlight text| `<span class="hl">`    | Key terms inline in paragraphs     |
+| FAQ accordion | `.faq-section`         | 3–6 common questions               |
+| Bottom CTA    | `.post-cta-section`    | Always at end of every article     |
+
+---
 
 ## Workflow
 
-When `/post-design` is invoked, ask for or use the provided:
-1. **Topic / post goal** — what's this post about? (e.g. "מאמר חדש על מחיר הובלה" / "טיפ שבועי" / "קידום הצטרפות מובילים")
-2. **Audience** — לקוחות (מזמינים הובלה) or מובילים (נהגים/חברות)
-3. **Format** — Facebook (1200×630) or Instagram square (1080×1080)
+### Step 1 — Gather inputs (ask if missing)
+- **Keyword / Topic** (e.g. "כמה עולה הובלת דירה")
+- **Audience**: לקוחות (מזמינים הובלה) OR מובילים (נהגים/חברות)
+- **Article length**: קצר (500 מילה) / רגיל (800–1,000) / מורחב (1,200+)
 
-Then:
-1. Generate the HTML file to `posts/YYYY-MM-DD-slug.html`
-2. Print the file path and tell the user to open it in a browser and screenshot it
-3. Offer to send a preview message via WhatsApp (GreenAPI)
+### Step 2 — Generate content
+Fill ALL `{{PLACEHOLDER}}` tokens with real Hebrew content:
+- `{{ARTICLE_TITLE}}` — title tag (no site name)
+- `{{ARTICLE_TITLE_WITH_HL}}` — H1 with `<span class="hl">key phrase</span>` wrapping the keyword
+- `{{CATEGORY}}` — e.g. "מדריך לקוח" / "טיפ למוביל" / "מחירון"
+- `{{ARTICLE_SUBTITLE}}` — one sentence describing who this is for + the value
+- `{{PUBLISH_DATE}}` — today's date (DD.MM.YYYY)
+- `{{READ_TIME}}` — estimated reading time in minutes
+- All `{{H2_N}}`, `{{BODY_SECTION_N}}` — full Hebrew content per SEO guidelines
+- `{{STAT_N_NUM}}` / `{{STAT_N_LABEL}}` — real market data (see keyword-research.md)
+- `{{CTA_INLINE_*}}` — audience-specific CTA (customers → "קבלו הצעת מחיר" / movers → "הצטרפו כמוביל")
+- `{{CTA_BOTTOM_*}}` — strong closing CTA with guarantee-style note
+- `{{FAQ_*}}` — 3 real questions users search on Google
+- Remove any unused sections from the output HTML (don't leave empty placeholders)
 
-## HTML Template (Dark — for engagement posts)
+### Step 3 — Choose components
+Not every article needs every component. Use judgment:
+- **Pricing articles** → always include stat strip + comparison table
+- **How-to articles** → ordered lists + tip callouts
+- **Lead-gen articles (movers)** → aggressive inline CTA after second H2
+- **City/geo articles** → stat strip with city-specific data + bottom CTA
 
-```html
-<!DOCTYPE html>
-<html dir="rtl" lang="he">
-<head>
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  width: 1200px; height: 630px; /* or 1080x1080 for Instagram */
-  background: linear-gradient(135deg, #8952E0 0%, #4F1D9E 100%);
-  font-family: 'Rubik', sans-serif;
-  direction: rtl;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  position: relative;
-}
-.card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 24px;
-  padding: 48px 56px;
-  max-width: 900px;
-  width: 100%;
-  backdrop-filter: blur(10px);
-}
-.logo { color: #6EC1E4; font-size: 20px; font-weight: 700; letter-spacing: 1px; margin-bottom: 24px; }
-.headline { color: #fff; font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
-.sub { color: rgba(255,255,255,0.75); font-size: 24px; font-weight: 400; line-height: 1.5; margin-bottom: 32px; }
-.cta {
-  display: inline-block; background: #fff; color: #7434DB;
-  font-size: 20px; font-weight: 700; padding: 14px 32px;
-  border-radius: 10px; text-decoration: none;
-}
-.badge {
-  position: absolute; bottom: 40px; left: 56px;
-  background: rgba(255,255,255,0.12); border-radius: 8px;
-  padding: 8px 16px; color: rgba(255,255,255,0.6); font-size: 16px;
-}
-.dots {
-  position: absolute; top: -60px; right: -60px;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(110,193,228,0.3) 0%, transparent 70%);
-  border-radius: 50%;
-}
-</style>
-</head>
-<body>
-<div class="dots"></div>
-<div class="card">
-  <div class="logo">LiftyGo ⚡</div>
-  <div class="headline"><!-- HEADLINE HERE --></div>
-  <div class="sub"><!-- SUBTEXT HERE --></div>
-  <div class="cta"><!-- CTA TEXT --></div>
-</div>
-<div class="badge">liftygo.co.il</div>
-</body>
-</html>
-```
+### Step 4 — Save file
+Output file: `posts/YYYY-MM-DD-{keyword-slug}.html`
+(slug = keyword in Hebrew transliterated to latin or key word in English)
 
-## HTML Template (Light — for tips/info posts)
-
-```html
-<!DOCTYPE html>
-<html dir="rtl" lang="he">
-<head>
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  width: 1200px; height: 630px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #E2CCFF 100%);
-  font-family: 'Rubik', sans-serif;
-  direction: rtl;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  position: relative;
-}
-.card { max-width: 860px; width: 100%; padding: 0 40px; }
-.logo { color: #7434DB; font-size: 20px; font-weight: 700; letter-spacing: 1px; margin-bottom: 28px; }
-.tag {
-  display: inline-block; background: #E2CCFF; color: #7434DB;
-  font-size: 16px; font-weight: 600; padding: 6px 16px;
-  border-radius: 20px; margin-bottom: 20px;
-}
-.headline { color: #2D2152; font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
-.sub { color: #54595F; font-size: 22px; font-weight: 400; line-height: 1.55; margin-bottom: 32px; }
-.cta {
-  display: inline-block; background: #7434DB; color: #fff;
-  font-size: 20px; font-weight: 700; padding: 14px 32px;
-  border-radius: 10px; text-decoration: none;
-}
-.blob {
-  position: absolute; bottom: -100px; left: -80px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, #B795EC 0%, transparent 70%);
-  border-radius: 50%; opacity: 0.4;
-}
-.badge { position: absolute; top: 36px; left: 48px; color: #7A7A7A; font-size: 15px; }
-</style>
-</head>
-<body>
-<div class="blob"></div>
-<div class="badge">liftygo.co.il</div>
-<div class="card">
-  <div class="logo">LiftyGo</div>
-  <div class="tag"><!-- TAG e.g. "טיפ שבועי" --></div>
-  <div class="headline"><!-- HEADLINE --></div>
-  <div class="sub"><!-- SUBTEXT --></div>
-  <div class="cta"><!-- CTA --></div>
-</div>
-</body>
-</html>
-```
-
-## GreenAPI — Send WhatsApp Notification
-
-After generating a post, offer to send Itay a WhatsApp message:
+### Step 5 — Report and notify
+1. Print the file path
+2. Print: "פתח בדפדפן — הקש F12 → Toggle Device Toolbar → הגדר לרוחב 390px למובייל / 1200px לדסקטופ"
+3. Send WhatsApp notification via GreenAPI:
 
 ```bash
 curl -s -X POST \
   "https://api.green-api.com/waInstance7105321145/sendMessage/0f30479f17624f9dbd6a05c2f779f6f11cac620e1e6e4f77bd" \
   -H "Content-Type: application/json" \
-  -d "{\"chatId\":\"972553005865@c.us\",\"message\":\"MESSAGE_HERE\"}"
+  -d "{\"chatId\":\"972553005865@c.us\",\"message\":\"📝 *מאמר חדש מוכן!*\n\n*כותרת:* TITLE\n*קובץ:* posts/FILENAME\n*קהל:* AUDIENCE\n\nפתח בדפדפן לצפייה בעיצוב.\"}"
 ```
 
-## Output Format
+---
 
-Always end with:
-1. File saved at: `posts/YYYY-MM-DD-slug.html`
-2. "פתח את הקובץ בדפדפן, הגדל לגודל מסך מלא (Ctrl+Shift+M בDevTools → 1200×630), וצלם screenshot"
-3. Ask: "לשלוח הודעת WhatsApp על הפוסט?"
+## SEO Rules (Apply in Every Article)
+- H1 contains the primary keyword exactly once
+- First paragraph answers the title question directly (40–60 words) — for featured snippet
+- Each H2 is a real sub-question users search (use `seo/keyword-research.md`)
+- Internal link to `https://liftygo.co.il/` with anchor text related to getting a quote
+- Meta description placeholder: add as HTML comment `<!-- META: ... -->` at top of `<head>`
+
+---
+
+## Responsive Checklist (built into template CSS)
+- Mobile (≤480px): font sizes scale down, nav CTA text hides, stat strip 2-col
+- Tablet (≤768px): padding reduced, hero text smaller
+- Desktop: full design with max-width 740px content column
+
+---
+
+## Template Location
+Base template: `posts/article-template.html`
+Do NOT modify the base template — always copy it to a new dated file.
