@@ -244,6 +244,17 @@ async function main() {
 
   const waResult = await sendWhatsApp(message);
   console.log('WhatsApp sent:', JSON.stringify(waResult));
+
+  // Save full GSC data for the strategy agent
+  const reportsDir = require('path').join(__dirname, '../reports');
+  if (!require('fs').existsSync(reportsDir)) require('fs').mkdirSync(reportsDir);
+  const report = { date: now.toISOString(), gscMap, totalRows };
+  require('fs').writeFileSync(
+    require('path').join(reportsDir, 'seo-latest.json'),
+    JSON.stringify(report, null, 2),
+    'utf8'
+  );
+  console.log('Report saved to reports/seo-latest.json');
 }
 
 main().catch(err => {

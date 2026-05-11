@@ -5,3 +5,4 @@ node_modules/
 oauth_code*.txt
 meta_snippet.php
 seo_meta_snippet.json
+reports/
