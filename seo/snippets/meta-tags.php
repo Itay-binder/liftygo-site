@@ -20,6 +20,7 @@ add_filter("pre_get_document_title", function($title) {
         30   => "\u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05EA} \u{05D3}\u{05D9}\u{05E8}\u{05D4} | \u{05D4}\u{05E9}\u{05D5}\u{05D5}\u{05D0}\u{05EA} \u{05DE}\u{05D7}\u{05D9}\u{05E8}\u{05D9}\u{05DD} \u{05DE}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC}\u{05D9}\u{05DD} \u{05DE}\u{05E7}\u{05E6}\u{05D5}\u{05E2}\u{05D9}\u{05D9}\u{05DD} | LiftyGo",
         1911 => "\u{05D4}\u{05E6}\u{05D8}\u{05E8}\u{05E4}\u{05D5}\u{05EA} \u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC}\u{05D9}\u{05DD} | \u{05DC}\u{05E7}\u{05D1}\u{05DC} \u{05DC}\u{05D9}\u{05D3}\u{05D9}\u{05DD} \u{05D7}\u{05DE}\u{05D9}\u{05DD} \u{05DC}\u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4} | LiftyGo",
         2884 => "\u{05DE}\u{05E1}\u{05DC}\u{05D5}\u{05DC} \u{05E1}\u{05D9}\u{05D8}\u{05D5}\u{05E0}\u{05D0}\u{05D9} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC}\u{05D9}\u{05DD} | \u{05DC}\u{05D9}\u{05D3}\u{05D9}\u{05DD} \u{05D1}\u{05E0}\u{05E4}\u{05D7} \u{05D2}\u{05D1}\u{05D5}\u{05D4} | LiftyGo",
+        1792 => "\u{05D0}\u{05D9}\u{05DA} \u{05DC}\u{05DE}\u{05E6}\u{05D5}\u{05D0} \u{05E2}\u{05D1}\u{05D5}\u{05D3}\u{05D5}\u{05EA} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4} \u{2014} \u{05D4}\u{05DE}\u{05D3}\u{05E8}\u{05D9}\u{05DA} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC} \u{05D4}\u{05DE}\u{05EA}\u{05D7}\u{05D9}\u{05DC} | LiftyGo",
     ];
     $id = get_queried_object_id();
     return isset($custom_titles[$id]) ? $custom_titles[$id] : $title;
@@ -43,6 +44,11 @@ add_action("wp_head", function() {
             "og_title" => "\u{05DE}\u{05E1}\u{05DC}\u{05D5}\u{05DC} \u{05E1}\u{05D9}\u{05D8}\u{05D5}\u{05E0}\u{05D0}\u{05D9} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC}\u{05D9}\u{05DD} | \u{05DC}\u{05D9}\u{05D3}\u{05D9}\u{05DD} \u{05D1}\u{05E0}\u{05E4}\u{05D7} \u{05D2}\u{05D1}\u{05D5}\u{05D4} | LiftyGo",
             "og_url"   => "https://liftygo.co.il/joinus-wholesaler/",
         ],
+        1792 => [
+            "desc"     => "\u{05DE}\u{05D7}\u{05E4}\u{05E9} \u{05E2}\u{05D1}\u{05D5}\u{05D3}\u{05D5}\u{05EA} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4}? \u{05D4}\u{05DE}\u{05D3}\u{05E8}\u{05D9}\u{05DA} \u{05D4}\u{05DE}\u{05DC}\u{05D0} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC} \u{05D4}\u{05DE}\u{05EA}\u{05D7}\u{05D9}\u{05DC} \u{2014} \u{05D0}\u{05D9}\u{05DA} \u{05DC}\u{05D4}\u{05E9}\u{05D9}\u{05D2} \u{05DC}\u{05D9}\u{05D3}\u{05D9}\u{05DD}, \u{05D4}\u{05E9}\u{05D5}\u{05D5}\u{05D0}\u{05EA} \u{05E4}\u{05DC}\u{05D8}\u{05E4}\u{05D5}\u{05E8}\u{05DE}\u{05D5}\u{05EA}, \u{05D5}\u{05D8}\u{05D9}\u{05E4}\u{05D9}\u{05DD} \u{05DC}\u{05D1}\u{05E0}\u{05D9}\u{05D9}\u{05EA} \u{05D4}\u{05DB}\u{05E0}\u{05E1}\u{05D4} \u{05E7}\u{05D1}\u{05D5}\u{05E2}\u{05D4} \u{05DE}\u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D5}\u{05EA}.",
+            "og_title" => "\u{05D0}\u{05D9}\u{05DA} \u{05DC}\u{05DE}\u{05E6}\u{05D5}\u{05D0} \u{05E2}\u{05D1}\u{05D5}\u{05D3}\u{05D5}\u{05EA} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4} | \u{05D4}\u{05DE}\u{05D3}\u{05E8}\u{05D9}\u{05DA} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC} | LiftyGo",
+            "og_url"   => "https://liftygo.co.il/moving-jobs-israel/",
+        ],
     ];
     $id = get_queried_object_id();
     if (!isset($pages[$id])) return;
@@ -59,7 +65,7 @@ add_action("wp_head", function() {
     echo '<meta name="twitter:description" content="' . esc_attr($p["desc"]) . '" />' . "\n";
 }, 5);
 
-// ─── Schema JSON-LD — דף הבית בלבד ───────────────────────────────────────────
+// ─── Schema JSON-LD — דף הבית ─────────────────────────────────────────────────
 add_action("wp_head", function() {
     if (!is_front_page()) return;
     $schema = [
@@ -70,6 +76,25 @@ add_action("wp_head", function() {
         "description" => "\u{05E4}\u{05DC}\u{05D8}\u{05E4}\u{05D5}\u{05E8}\u{05DE}\u{05D4} \u{05DC}\u{05D7}\u{05D9}\u{05E4}\u{05D5}\u{05E9} \u{05D5}\u{05D4}\u{05E9}\u{05D5}\u{05D5}\u{05D0}\u{05EA} \u{05DE}\u{05D7}\u{05D9}\u{05E8}\u{05D9}\u{05DD} \u{05E9}\u{05DC} \u{05E9}\u{05D9}\u{05E8}\u{05D5}\u{05EA}\u{05D9} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4} \u{05D1}\u{05D9}\u{05E9}\u{05E8}\u{05D0}\u{05DC}",
         "areaServed"  => "\u{05D9}\u{05E9}\u{05E8}\u{05D0}\u{05DC}",
         "serviceType" => "\u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D5}\u{05EA} \u{05D3}\u{05D9}\u{05E8}\u{05D4}",
+    ];
+    echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>' . "\n";
+}, 10);
+
+// ─── Schema JSON-LD — פוסט בלוג /moving-jobs-israel/ ──────────────────────────
+add_action("wp_head", function() {
+    if (get_queried_object_id() !== 1792) return;
+    $schema = [
+        "@context"         => "https://schema.org",
+        "@type"            => "BlogPosting",
+        "headline"         => "\u{05D0}\u{05D9}\u{05DA} \u{05DC}\u{05DE}\u{05E6}\u{05D5}\u{05D0} \u{05E2}\u{05D1}\u{05D5}\u{05D3}\u{05D5}\u{05EA} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4} \u{2014} \u{05D4}\u{05DE}\u{05D3}\u{05E8}\u{05D9}\u{05DA} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC} \u{05D4}\u{05DE}\u{05EA}\u{05D7}\u{05D9}\u{05DC}",
+        "url"              => "https://liftygo.co.il/moving-jobs-israel/",
+        "datePublished"    => "2026-05-01",
+        "dateModified"     => "2026-05-11",
+        "inLanguage"       => "he-IL",
+        "author"           => ["@type" => "Organization", "name" => "LiftyGo", "url" => "https://liftygo.co.il"],
+        "publisher"        => ["@type" => "Organization", "name" => "LiftyGo", "url" => "https://liftygo.co.il"],
+        "description"      => "\u{05DE}\u{05D7}\u{05E4}\u{05E9} \u{05E2}\u{05D1}\u{05D5}\u{05D3}\u{05D5}\u{05EA} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05D4}? \u{05D4}\u{05DE}\u{05D3}\u{05E8}\u{05D9}\u{05DA} \u{05D4}\u{05DE}\u{05DC}\u{05D0} \u{05DC}\u{05DE}\u{05D5}\u{05D1}\u{05D9}\u{05DC} \u{05D4}\u{05DE}\u{05EA}\u{05D7}\u{05D9}\u{05DC}",
+        "mainEntityOfPage" => ["@type" => "WebPage", "@id" => "https://liftygo.co.il/moving-jobs-israel/"],
     ];
     echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }, 10);
