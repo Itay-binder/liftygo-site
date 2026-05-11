@@ -54,6 +54,7 @@ add_action("wp_head", function() {
             "desc"     => "\u{05DB}\u{05DE}\u{05D4} \u{05E2}\u{05D5}\u{05DC}\u{05D4} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05EA} \u{05D3}\u{05D9}\u{05E8}\u{05D4}? 3 \u{05D7}\u{05D3}\u{05E8}\u{05D9}\u{05DD} 1,000\u{2013}2,200\u{20AA} | 4 \u{05D7}\u{05D3}\u{05E8}\u{05D9}\u{05DD} 1,800\u{2013}3,500\u{20AA}. \u{05DE}\u{05D4} \u{05DE}\u{05E9}\u{05E4}\u{05D9}\u{05E2} \u{05E2}\u{05DC} \u{05D4}\u{05DE}\u{05D7}\u{05D9}\u{05E8}, \u{05D8}\u{05D9}\u{05E4}\u{05D9}\u{05DD} \u{05DC}\u{05D7}\u{05D9}\u{05E1}\u{05DB}\u{05D5}\u{05DF}, \u{05D5}\u{05D4}\u{05E9}\u{05D5}\u{05D5}\u{05D0}\u{05EA} \u{05D4}\u{05E6}\u{05E2}\u{05D5}\u{05EA} \u{05DE}\u{05D7}\u{05D9}\u{05E8} \u{05D1}\u{05D7}\u{05D9}\u{05E0}\u{05DD}.",
             "og_title" => "\u{05DB}\u{05DE}\u{05D4} \u{05E2}\u{05D5}\u{05DC}\u{05D4} \u{05D4}\u{05D5}\u{05D1}\u{05DC}\u{05EA} \u{05D3}\u{05D9}\u{05E8}\u{05D4}? \u{05DE}\u{05D3}\u{05E8}\u{05D9}\u{05DA} \u{05DE}\u{05D7}\u{05D9}\u{05E8}\u{05D9}\u{05DD} 2026 | LiftyGo",
             "og_url"   => "https://liftygo.co.il/moving-cost-guide/",
+            "og_image" => "https://liftygo.co.il/wp-content/uploads/2026/05/moving-cost-guide-cover.png",
         ],
     ];
     $id = get_queried_object_id();
