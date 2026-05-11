@@ -13,7 +13,7 @@ LiftyGo הוא מותג טכנולוגי מודרני בעולם ההובלות 
 ```
 Primary dark:   #4f1d9e
 Primary mid:    #7434db
-Primary light:  #a855f7  (glow, accents)
+Primary light:  #a855f7  (accents only)
 White:          #ffffff
 Gray-50:        #f8f7ff
 Gray-100:       #f0edf9
@@ -23,10 +23,8 @@ Text body:      #374151
 Text muted:     #6b7280
 ```
 
-**גרדיאנט hero:** `linear-gradient(135deg, #0a0520 0%, #1a0a42 40%, #3d1a8e 100%)`
 **גרדיאנט כפתורים:** `linear-gradient(135deg, #7434db, #4f1d9e)`
-**גרדיאנט CTA section:** `linear-gradient(135deg, #1a0a42 0%, #4f1d9e 100%)`
-**Glow:** `0 0 40px rgba(116, 52, 219, 0.35)`
+**גרדיאנט CTA section:** `linear-gradient(135deg, #4f1d9e, #7434db)`
 
 ---
 
@@ -38,95 +36,97 @@ Text muted:     #6b7280
 
 ---
 
+## רקע ברירת מחדל — בהיר
+
+**ברירת המחדל היא רקע לבן/בהיר.** רקע כהה מותר רק בסקשנים ספציפיים (hero, CTA), לא כרקע עמוד שלם.
+
+```
+רקע עמוד:    #ffffff
+רקע surface: #f8f7ff
+רקע section: #f0edf9
+```
+
+---
+
 ## שפת עיצוב
 
-### Glassmorphism (חובה בכרטיסיות ואלמנטים מרחפים)
+### כרטיסיות (ברירת מחדל)
 ```css
-background: rgba(255, 255, 255, 0.08);
-backdrop-filter: blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.15);
-box-shadow: 0 8px 32px rgba(79, 29, 158, 0.25);
+background: #ffffff;
+border: 1px solid rgba(116, 52, 219, 0.14);
 border-radius: 16px;
-```
-
-### כרטיסיות על רקע בהיר
-```css
-background: rgba(255, 255, 255, 0.75);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(116, 52, 219, 0.15);
-box-shadow: 0 4px 24px rgba(79, 29, 158, 0.08);
-border-radius: 16px;
+box-shadow: 0 4px 20px rgba(79, 29, 158, 0.07);
 transition: transform 0.2s, box-shadow 0.2s;
-/* hover: translateY(-2px) + stronger shadow */
-```
-
-### Purple Glow (על אלמנטים dark)
-```css
-box-shadow: 0 0 40px rgba(116, 52, 219, 0.4);
-/* radial-gradient בפסאודו-אלמנט לעומק */
+/* hover: translateY(-2px) + box-shadow גדול יותר */
 ```
 
 ### Soft shadows (כלל)
-- לא צלל חד וכבד
-- `box-shadow: 0 4px 24px rgba(79, 29, 158, 0.08)` — אלמנטים רגילים
-- `box-shadow: 0 8px 32px rgba(79, 29, 158, 0.2)` — hover / focus
+```css
+/* רגיל */   box-shadow: 0 4px 20px rgba(79, 29, 158, 0.07);
+/* hover */  box-shadow: 0 8px 28px rgba(79, 29, 158, 0.14);
+```
+
+### סקשן Hero / CTA (dark sections בלבד)
+```css
+background: linear-gradient(135deg, #4f1d9e, #7434db);
+color: #fff;
+```
 
 ---
 
 ## קומפוננטים
 
 ### Nav (Sticky)
-- רקע: `rgba(255,255,255,0.95)` + `backdrop-filter: blur(20px)`
+- רקע: `rgba(255,255,255,0.96)` + `backdrop-filter: blur(16px)`
 - גובה: 64px
-- לוגו LiftyGo בצד ימין (RTL)
+- לוגו LiftyGo בצד ימין (RTL) — gradient text סגול
 - לינקים: הזמנת הובלה | הצטרפות מובילים | בלוג
-- כפתור CTA: gradient + box-shadow glow
+- כפתור CTA: gradient סגול
 
 ### Hero Section
-- רקע: dark purple gradient
-- Radial glow pseudoelements (::before / ::after)
-- Category badge: glassmorphism pill
+- רקע: gradient כהה `#4f1d9e` → `#7434db` (dark section בלבד)
+- Category badge: pill עם border בהיר
 - H1: לבן, clamp(28px, 5vw, 52px), font-weight 900
-- `.hl` highlight: `background: rgba(168, 85, 247, 0.3)`, border-radius 8px
+- `.hl` highlight: `background: rgba(255,255,255,0.15)`, border-radius 8px
 
-### Factor Cards (על רקע בהיר)
-- Glassmorphism style
-- מספר סגול עם glow
-- hover: lift + stronger shadow
+### Factor / Content Cards
+- רקע לבן, border סגול עדין
+- מספר: circle עם gradient סגול
+- hover: lift קל + shadow
 
 ### Pricing Table
-- thead: dark gradient `#1a0a42` → `#4f1d9e`
+- thead: gradient סגול
 - ערכי מחיר: `#7434db`, bold
-- שורות: סירוג `rgba(79, 29, 158, 0.03)`
+- שורות: סירוג `#f8f7ff`
 
 ### CTA Sections (inline + bottom)
-- dark purple gradient background
-- radial glow pseudoelements
-- כפתור: לבן עם טקסט סגול (inline) / gradient עם צל glow (bottom)
+- רקע: gradient סגול כהה
+- כפתור: לבן עם טקסט סגול
 
 ### FAQ Accordion
-- glass cards
-- border-bottom גרדיאנט סגול
+- כרטיסיות לבנות עם border עדין
+- icon: circle עם border סגול
 
 ---
 
 ## כללי עיצוב
 
 ### מותר ✅
-- Minimalism נקי עם הרבה חללים
-- Soft cinematic lighting
-- Purple glow עדין ליצירת עומק
-- Glassmorphism מדויק
-- Gradients חלקים
-- מילים: premium, elegant, futuristic, clean
+- Minimalism נקי עם הרבה whitespace
+- רקע בהיר כברירת מחדל
+- Soft shadows עדינים
+- Gradients חלקים בסגול
+- מילים: premium, elegant, clean, modern
 
 ### אסור ❌
+- Glow effects / זוהרים / radial glow
+- רקע כהה לעמוד שלם
 - ניאון אגרסיבי
 - עיצוב "פלייר זול"
 - אייקונים מצוירים / childish
 - עומס ויזואלי
 - עיצוב גיימינג
-- סמוך לוגיסטיקה ישנה
+- לוגיסטיקה ישנה
 
 ---
 
