@@ -1,0 +1,347 @@
+{
+  "version": "0.4",
+  "title": "LiftyGo — Blog Article Template",
+  "type": "page",
+  "content": [
+    {
+      "id": "9e84b54",
+      "elType": "section",
+      "settings": {
+        "structure": "10",
+        "content_width": {
+          "unit": "px",
+          "size": 1240,
+          "sizes": []
+        },
+        "gap": "default",
+        "background_background": "",
+        "background_color": "",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        },
+        "stretch_section": "section-stretched",
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "9fe8708",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "d6dcb9b",
+              "elType": "widget",
+              "settings": {
+                "html": "<nav class=\"lg-site-nav\">\n  <div class=\"lg-site-nav-inner\">\n    <a href=\"https://liftygo.co.il/\" class=\"lg-logo\">Lifty<span>Go</span></a>\n    <div class=\"lg-nav-menu\">\n      <a href=\"https://liftygo.co.il/blog/\" class=\"active\">בלוג</a>\n      <a href=\"https://liftygo.co.il/joinus/\">להצטרף כמוביל</a>\n      <a href=\"https://liftygo.co.il/\">לקבלת מחירי הובלה</a>\n    </div>\n    <a href=\"https://liftygo.co.il/\" class=\"lg-nav-cta\">לקבלת מחירי הובלה ←</a>\n  </div>\n</nav>\n<style>\n.lg-site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(163,121,231,.12);font-family:'Rubik',sans-serif}\n.lg-site-nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:40px;padding:14px 24px}\n.lg-logo{font-size:22px;font-weight:800;color:#7434DB;letter-spacing:-.3px;text-decoration:none}\n.lg-logo span{color:#A379E7}\n.lg-nav-menu{display:flex;gap:32px;align-items:center;flex:1}\n.lg-nav-menu a{font-size:15px;font-weight:500;color:#374151;padding:6px 0;position:relative;text-decoration:none;transition:color .15s}\n.lg-nav-menu a:hover{color:#7434DB}\n.lg-nav-menu a.active{color:#7434DB;font-weight:700}\n.lg-nav-menu a.active::after{content:\"\";position:absolute;bottom:-2px;right:0;left:0;height:2px;background:#7434DB;border-radius:2px}\n.lg-nav-cta{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#A379E7,#7434DB);color:#fff;font-size:14px;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;transition:opacity .2s,transform .1s}\n.lg-nav-cta:hover{opacity:.9}\n.lg-nav-cta:active{transform:translateY(1px)}\n@media (max-width:640px){.lg-site-nav-inner{padding:14px 18px;gap:14px;flex-wrap:wrap}.lg-nav-menu{gap:18px;order:3;width:100%}}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "1071745",
+      "elType": "section",
+      "settings": {
+        "structure": "10",
+        "content_width": {
+          "unit": "px",
+          "size": 1240,
+          "sizes": []
+        },
+        "gap": "default",
+        "background_background": "",
+        "background_color": "",
+        "padding": {
+          "unit": "px",
+          "top": "28",
+          "right": "24",
+          "bottom": "8",
+          "left": "24",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "f49ee6e",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "106987e",
+              "elType": "widget",
+              "settings": {
+                "html": "<nav class=\"lg-breadcrumb\" aria-label=\"נתיב ניווט\">\n  <a href=\"https://liftygo.co.il/blog/\">בלוג</a>\n  <span class=\"sep\">›</span>\n  <a href=\"https://liftygo.co.il/blog/category/moving-tips/\">טיפים להובלה</a>\n  <span class=\"sep\">›</span>\n  <span class=\"current\">איך לבחור מוביל אמין</span>\n</nav>\n<style>\n.lg-breadcrumb{display:flex;gap:8px;align-items:center;font-size:14px;color:#6b7280;font-family:'Rubik',sans-serif;flex-wrap:wrap}\n.lg-breadcrumb a{color:#6b7280;text-decoration:none;transition:color .15s}\n.lg-breadcrumb a:hover{color:#7434DB}\n.lg-breadcrumb .sep{color:#C9C3D6}\n.lg-breadcrumb .current{color:#2D2152;font-weight:500}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "e0fcef8",
+      "elType": "section",
+      "settings": {
+        "structure": "23",
+        "content_width": {
+          "unit": "px",
+          "size": 1240,
+          "sizes": []
+        },
+        "gap": "extended",
+        "background_background": "",
+        "background_color": "",
+        "padding": {
+          "unit": "px",
+          "top": "8",
+          "right": "24",
+          "bottom": "64",
+          "left": "24",
+          "isLinked": false
+        },
+        "gap_columns_custom": {
+          "unit": "px",
+          "size": 28,
+          "sizes": []
+        }
+      },
+      "elements": [
+        {
+          "id": "c5148a2",
+          "elType": "column",
+          "settings": {
+            "_column_size": 70,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "0e38065",
+              "elType": "widget",
+              "settings": {
+                "html": "<div class=\"lg-article-card\"><style>.lg-article-card{background:#fff;border-radius:18px;box-shadow:0 4px 16px rgba(95,63,146,.06),0 1px 2px rgba(31,27,46,.04);padding:36px 40px 0}@media(max-width:640px){.lg-article-card{padding:24px 22px 0}}</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            },
+            {
+              "id": "870cb0e",
+              "elType": "widget",
+              "settings": {
+                "html": "<div class=\"lg-art-top\">\n  <span class=\"lg-tag\">טיפים להובלה</span>\n  <h1>איך לבחור מוביל אמין: <span class=\"hl\">המדריך המלא</span> להובלה בראש שקט</h1>\n  <div class=\"lg-meta\">\n    <span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/></svg> צוות LiftyGo</span>\n    <span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"/><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/></svg> 25 במאי 2024</span>\n    <span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/></svg> 15 דקות קריאה</span>\n  </div>\n  <div class=\"lg-hero\">\n    <div class=\"lg-hero-ph\">\n      <svg viewBox=\"0 0 24 18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\".75\" y=\"3\" width=\"13.5\" height=\"10\" rx=\"1\"/><path d=\"M14.25 6h4l2.5 2.5V13h-6.5V6z\"/><circle cx=\"4.5\" cy=\"14.5\" r=\"1.5\"/><circle cx=\"17.5\" cy=\"14.5\" r=\"1.5\"/></svg>\n      תמונת הכותרת — moving truck hero\n    </div>\n  </div>\n</div>\n<style>\n.lg-art-top{font-family:'Rubik',sans-serif}\n.lg-tag{display:inline-block;background:linear-gradient(135deg,#D3BEF4,#E2CCFF);color:#2D2152;font-size:13px;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:.3px}\n.lg-art-top h1{font-size:clamp(26px,3.4vw,36px);line-height:1.25;margin:18px 0 22px;color:#2D2152;font-weight:800;letter-spacing:-.01em}\n.lg-art-top h1 .hl{background:linear-gradient(135deg,#D3BEF4,#E2CCFF);color:#2D2152;border-radius:10px;padding:2px 10px;display:inline}\n.lg-meta{display:flex;gap:22px;align-items:center;color:#6b7280;font-size:14px;padding-bottom:22px;flex-wrap:wrap}\n.lg-meta span{display:inline-flex;align-items:center;gap:6px}\n.lg-meta svg{color:#8e8899}\n.lg-hero{width:100%;aspect-ratio:16/9;border-radius:12px;background:linear-gradient(135deg,#E9DEF7,#D8C8EC);display:grid;place-items:center;color:#7434DB;margin-bottom:28px;overflow:hidden}\n.lg-hero-ph{text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:rgba(95,63,146,.65)}\n.lg-hero-ph svg{width:90px;height:70px;opacity:.55;margin:0 auto 10px;display:block}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            },
+            {
+              "id": "078c00d",
+              "elType": "widget",
+              "settings": {
+                "title": "למה חשוב לבחור מוביל אמין?",
+                "header_size": "h2",
+                "align": "right",
+                "title_color": "#2D2152",
+                "typography_typography": "custom",
+                "typography_font_family": "Rubik",
+                "typography_font_weight": "700",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 24,
+                  "sizes": []
+                }
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "5a4c0e5",
+              "elType": "widget",
+              "settings": {
+                "editor": "<p>מוביל מקצועי ואמין יבטיח שהחפצים שלכם יגיעו ליעדם בשלום, בזמן וללא נזקים. בחירה לא נכונה עלולה לגרום לעוגמת נפש, להוצאות נוספות ולעיכובים מיותרים. השקעה בבחירה נכונה היא השקעה משתלמת.</p>",
+                "text_color": "#374151",
+                "typography_typography": "custom",
+                "typography_font_family": "Rubik",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 16,
+                  "sizes": []
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.7,
+                  "sizes": []
+                },
+                "align": "right"
+              },
+              "elements": [],
+              "widgetType": "text-editor"
+            },
+            {
+              "id": "e07f098",
+              "elType": "widget",
+              "settings": {
+                "html": "<div class=\"lg-tips-wrap\">\n  <h2>5 טיפים לבחירת מוביל אמין</h2>\n  <ol class=\"lg-tips\">\n    <li><div><div class=\"t-title\">בדקו חוות דעת והמלצות</div><div class=\"t-body\">חפשו ביקורות אמיתיות בגוגל, פייסבוק ובאתרי דירוג עצמאיים. שימו לב לתגובות חוזרות על אותם נושאים — אם רבים מתלוננים על אותו דבר, זה דגל אדום.</div></div></li>\n    <li><div><div class=\"t-title\">השוו מחירים</div><div class=\"t-body\">בקשו לפחות שלוש הצעות מחיר מפורטות וכתובות. הימנעו ממובילים שנותנים מחיר טלפוני בלבד או שמסרבים להגיע להערכה מקדימה בבית.</div></div></li>\n    <li><div><div class=\"t-title\">וודאו ביטוח ורישוי</div><div class=\"t-body\">מוביל אמין יציג בפניכם רישיון עסק, רישיון להובלה ופוליסת ביטוח מקיפה. אל תהססו לבקש לראות את המסמכים.</div></div></li>\n    <li><div><div class=\"t-title\">שאלו על ניסיון</div><div class=\"t-body\">בררו כמה שנים החברה פועלת, כמה הובלות הם מבצעים בחודש ואיזה סוגי הובלה הם מתמחים בהם.</div></div></li>\n    <li><div><div class=\"t-title\">תקשורת ושירות</div><div class=\"t-body\">שימו לב לאיכות התקשורת מהרגע הראשון. האם הם עונים בזמן? האם הם מסבירים בסבלנות? יחס מקצועי בשלב הצעת המחיר מנבא הרבה על איכות השירות בפועל.</div></div></li>\n  </ol>\n</div>\n<style>\n.lg-tips-wrap{font-family:'Rubik',sans-serif;margin-top:8px}\n.lg-tips-wrap h2{font-size:clamp(20px,2.4vw,24px);font-weight:700;color:#2D2152;margin:28px 0 12px}\n.lg-tips{margin:8px 0 0;padding:0;list-style:none;counter-reset:tip;display:flex;flex-direction:column;gap:18px}\n.lg-tips li{counter-increment:tip;display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}\n.lg-tips li::before{content:counter(tip) \".\";font-weight:800;color:#7434DB;font-size:16px;line-height:1.5}\n.lg-tips .t-title{font-weight:700;color:#2D2152;font-size:16px;margin-bottom:4px}\n.lg-tips .t-body{color:#6b7280;font-size:15px;line-height:1.7}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            },
+            {
+              "id": "7e78ac8",
+              "elType": "widget",
+              "settings": {
+                "title": "סיכום",
+                "header_size": "h2",
+                "align": "right",
+                "title_color": "#2D2152",
+                "typography_typography": "custom",
+                "typography_font_family": "Rubik",
+                "typography_font_weight": "700",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 24,
+                  "sizes": []
+                }
+              },
+              "elements": [],
+              "widgetType": "heading"
+            },
+            {
+              "id": "6b1da85",
+              "elType": "widget",
+              "settings": {
+                "editor": "<p>בחירה נכונה של מוביל יכולה לעשות את כל ההבדל. קחו את הזמן, בדקו היטב ותהיו בראש שקט ביום ההובלה. צוות LiftyGo כאן כדי לעזור — אנחנו מחברים אתכם רק למובילים מאומתים ומדורגים.</p>",
+                "text_color": "#374151",
+                "typography_typography": "custom",
+                "typography_font_family": "Rubik",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 16,
+                  "sizes": []
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.7,
+                  "sizes": []
+                },
+                "align": "right"
+              },
+              "elements": [],
+              "widgetType": "text-editor"
+            },
+            {
+              "id": "35024cb",
+              "elType": "widget",
+              "settings": {
+                "html": "<div class=\"lg-art-footer\">\n  <div class=\"lg-reactions\">\n    <span class=\"lab\">האם המאמר היה לכם מועיל?</span>\n    <button class=\"lg-ibtn dn\" aria-label=\"לא עזר\" onclick=\"this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('on'));this.classList.add('on')\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3z\"/></svg></button>\n    <button class=\"lg-ibtn up\" aria-label=\"עזר\" onclick=\"this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('on'));this.classList.add('on')\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z\"/></svg></button>\n  </div>\n  <div class=\"lg-share\">\n    <span class=\"lab\">שתפו את המאמר:</span>\n    <a class=\"lg-ibtn\" aria-label=\"פייסבוק\" href=\"https://www.facebook.com/sharer/sharer.php?u=\" target=\"_blank\" rel=\"noopener\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z\"/></svg></a>\n    <a class=\"lg-ibtn\" aria-label=\"וואטסאפ\" href=\"https://wa.me/?text=\" target=\"_blank\" rel=\"noopener\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .19 5.3.19 11.84a11.79 11.79 0 0 0 1.58 5.92L0 24l6.4-1.68a11.83 11.83 0 0 0 5.64 1.44h.01c6.54 0 11.85-5.3 11.85-11.84a11.78 11.78 0 0 0-3.38-8.44z\"/></svg></a>\n    <button class=\"lg-ibtn\" aria-label=\"העתק קישור\" onclick=\"navigator.clipboard.writeText(location.href)\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg></button>\n  </div>\n</div>\n<style>\n.lg-art-footer{font-family:'Rubik',sans-serif;margin-top:32px;border:1px solid #e9e5f0;background:#f9f6fd;border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}\n.lg-reactions,.lg-share{display:flex;align-items:center;gap:12px}\n.lg-reactions .lab,.lg-share .lab{font-size:14px;color:#374151;font-weight:500}\n.lg-ibtn{width:38px;height:38px;border-radius:999px;background:#fff;border:1px solid #e9e5f0;display:grid;place-items:center;color:#6b7280;transition:all .15s;cursor:pointer;text-decoration:none}\n.lg-ibtn:hover{color:#7434DB;border-color:#D3BEF4;background:#f9f6fd}\n.lg-ibtn.up.on,.lg-ibtn.up:hover{color:#2BA776;border-color:#BFE5D2;background:#EFFAF4}\n.lg-ibtn.dn.on,.lg-ibtn.dn:hover{color:#C25C5C;border-color:#EBC8C8;background:#FAEFEF}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            },
+            {
+              "id": "ef9b83c",
+              "elType": "widget",
+              "settings": {
+                "html": "</div>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "40fe33d",
+          "elType": "column",
+          "settings": {
+            "_column_size": 30,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "1800bc8",
+              "elType": "widget",
+              "settings": {
+                "html": "<aside class=\"lg-sidebar\">\n  <section class=\"lg-card\">\n    <h3>חיפוש בבלוג</h3>\n    <form class=\"lg-search\" action=\"https://liftygo.co.il/\" method=\"get\" role=\"search\">\n      <input type=\"search\" name=\"s\" placeholder=\"חפש מאמרים…\">\n      <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/></svg>\n    </form>\n  </section>\n  <section class=\"lg-card\">\n    <h3>קטגוריות</h3>\n    <ul class=\"lg-cat\">\n      <li><a href=\"https://liftygo.co.il/blog/category/moving-tips/\"><span class=\"ico\">💡</span><span>טיפים להובלה</span></a></li>\n      <li><a href=\"https://liftygo.co.il/blog/category/moving-services/\"><span class=\"ico\">🚚</span><span>שירותי הובלה</span></a></li>\n      <li><a href=\"https://liftygo.co.il/blog/category/guides/\"><span class=\"ico\">📖</span><span>מדריכים</span></a></li>\n      <li><a href=\"https://liftygo.co.il/blog/category/customer-stories/\"><span class=\"ico\">👥</span><span>סיפורי לקוחות</span></a></li>\n      <li><a href=\"https://liftygo.co.il/blog/category/news/\"><span class=\"ico\">📣</span><span>חדשות ועדכונים</span></a></li>\n    </ul>\n  </section>\n  <section class=\"lg-card\">\n    <h3>מאמרים פופולריים</h3>\n    <div class=\"lg-pop\">\n      <a href=\"#\" class=\"pop\"><div><h4>10 דברים שכדאי לדעת לפני הובלה</h4><div class=\"m\">20 במאי 2024 · 8 דקות קריאה</div></div><div class=\"thumb\">📦</div></a>\n      <a href=\"#\" class=\"pop\"><div><h4>איך לארוז נכון לקראת מעבר דירה</h4><div class=\"m\">18 במאי 2024 · 12 דקות קריאה</div></div><div class=\"thumb\">📦</div></a>\n      <a href=\"#\" class=\"pop\"><div><h4>כמה עולה הובלה? מדריך מחירים</h4><div class=\"m\">15 במאי 2024 · 6 דקות קריאה</div></div><div class=\"thumb\">💰</div></a>\n    </div>\n    <a href=\"https://liftygo.co.il/blog/\" class=\"lg-all\">‹ צפו בכל המאמרים</a>\n  </section>\n</aside>\n<style>\n.lg-sidebar{font-family:'Rubik',sans-serif;display:flex;flex-direction:column;gap:20px;position:sticky;top:84px}\n.lg-card{background:#fff;border-radius:18px;box-shadow:0 4px 16px rgba(95,63,146,.06),0 1px 2px rgba(31,27,46,.04);padding:22px}\n.lg-card h3{margin:0 0 16px;font-size:17px;font-weight:700;color:#2D2152}\n.lg-search{position:relative}\n.lg-search input{width:100%;border:1px solid #e9e5f0;background:#fff;border-radius:10px;padding:12px 16px 12px 42px;font-family:inherit;color:#2D2152;font-size:14px;outline:none;transition:all .15s}\n.lg-search input::placeholder{color:#8e8899}\n.lg-search input:focus{border-color:#A379E7;box-shadow:0 0 0 3px #E2CCFF}\n.lg-search svg{position:absolute;top:50%;transform:translateY(-50%);left:14px;color:#8e8899;pointer-events:none}\n.lg-cat{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}\n.lg-cat a{display:flex;align-items:center;gap:12px;padding:10px 8px;border-radius:10px;color:#374151;font-size:15px;text-decoration:none;transition:all .15s}\n.lg-cat a:hover{background:#f9f6fd;color:#7434DB}\n.lg-cat .ico{width:34px;height:34px;border-radius:9px;background:#E2CCFF;color:#7434DB;display:grid;place-items:center;flex-shrink:0;font-size:16px}\n.lg-pop{display:flex;flex-direction:column;gap:14px}\n.pop{display:grid;grid-template-columns:1fr 64px;gap:14px;align-items:center;text-decoration:none}\n.pop .thumb{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#E2CCFF,#D3BEF4);display:grid;place-items:center;color:#7434DB;flex-shrink:0;font-size:26px}\n.pop h4{margin:0 0 4px;font-size:14.5px;font-weight:700;color:#2D2152;line-height:1.4;transition:color .15s}\n.pop .m{font-size:12.5px;color:#6b7280}\n.pop:hover h4{color:#7434DB}\n.lg-all{display:inline-flex;align-items:center;gap:6px;color:#7434DB;font-weight:700;font-size:14px;margin-top:6px;text-decoration:none;transition:color .15s}\n.lg-all:hover{color:#2D2152}\n@media (max-width:1024px){.lg-sidebar{position:static}}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "882332e",
+      "elType": "section",
+      "settings": {
+        "structure": "10",
+        "content_width": {
+          "unit": "px",
+          "size": 1240,
+          "sizes": []
+        },
+        "gap": "default",
+        "background_background": "",
+        "background_color": "",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        },
+        "stretch_section": "section-stretched",
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "34ac6fb",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "350916d",
+              "elType": "widget",
+              "settings": {
+                "html": "<footer class=\"lg-foot\">\n  <div class=\"inner\">\n    <div class=\"brand\">\n      <a href=\"https://liftygo.co.il/\" class=\"logo\">Lifty<span>Go</span></a>\n      <p>מחברים אותך למובילים<br>בפחות מ-60 שניות</p>\n      <div class=\"socials\">\n        <a href=\"https://www.facebook.com/liftygo\" target=\"_blank\" rel=\"noopener\" aria-label=\"פייסבוק\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z\"/></svg></a>\n        <a href=\"https://www.instagram.com/liftygo\" target=\"_blank\" rel=\"noopener\" aria-label=\"אינסטגרם\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\"/><path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/><line x1=\"17.5\" y1=\"6.5\" x2=\"17.51\" y2=\"6.5\"/></svg></a>\n        <a href=\"https://wa.me/972500000000\" target=\"_blank\" rel=\"noopener\" aria-label=\"וואטסאפ\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .19 5.3.19 11.84a11.79 11.79 0 0 0 1.58 5.92L0 24l6.4-1.68a11.83 11.83 0 0 0 5.64 1.44h.01c6.54 0 11.85-5.3 11.85-11.84a11.78 11.78 0 0 0-3.38-8.44z\"/></svg></a>\n      </div>\n    </div>\n    <div class=\"col\"><h4>שירותים</h4><ul><li><a href=\"https://liftygo.co.il/\">לקבלת מחיר הובלה</a></li><li><a href=\"https://liftygo.co.il/joinus/\">להצטרף כמוביל</a></li><li><a href=\"https://liftygo.co.il/services/\">שירותי הובלה</a></li></ul></div>\n    <div class=\"col\"><h4>מידע</h4><ul><li><a href=\"https://liftygo.co.il/about/\">אודותינו</a></li><li><a href=\"https://liftygo.co.il/blog/\">בלוג</a></li><li><a href=\"https://liftygo.co.il/faq/\">שאלות נפוצות</a></li><li><a href=\"https://liftygo.co.il/contact/\">צור קשר</a></li></ul></div>\n    <div class=\"col\"><h4>תמיכה</h4><ul><li><a href=\"https://liftygo.co.il/help/\">מרכז עזרה</a></li><li><a href=\"https://liftygo.co.il/privacy/\">מדיניות פרטיות</a></li><li><a href=\"https://liftygo.co.il/terms/\">תנאי שימוש</a></li></ul></div>\n  </div>\n  <div class=\"bot\">\n    <span>© 2026 LiftyGo. כל הזכויות שמורות.</span>\n    <span class=\"links\"><a href=\"https://liftygo.co.il/terms/\">תנאי שימוש</a> <a href=\"https://liftygo.co.il/privacy/\">מדיניות פרטיות</a> <a href=\"https://liftygo.co.il/site-terms/\">תקנון האתר</a></span>\n  </div>\n</footer>\n<style>\n.lg-foot{background:#fff;border-top:1px solid #e9e5f0;margin-top:40px;font-family:'Rubik',sans-serif}\n.lg-foot .inner{max-width:1240px;margin:0 auto;padding:48px 24px 24px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:48px}\n.lg-foot .logo{font-size:22px;font-weight:800;color:#7434DB;text-decoration:none}\n.lg-foot .logo span{color:#A379E7}\n.lg-foot .brand p{color:#6b7280;font-size:14px;line-height:1.7;margin:14px 0 18px}\n.lg-foot .socials{display:flex;gap:10px}\n.lg-foot .socials a{width:40px;height:40px;border-radius:999px;border:1px solid #e9e5f0;display:grid;place-items:center;color:#6b7280;transition:all .15s;text-decoration:none}\n.lg-foot .socials a:hover{color:#7434DB;border-color:#D3BEF4;background:#f9f6fd}\n.lg-foot .col h4{margin:0 0 18px;font-size:15px;font-weight:700;color:#2D2152}\n.lg-foot .col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}\n.lg-foot .col a{color:#6b7280;font-size:14px;text-decoration:none;transition:color .15s}\n.lg-foot .col a:hover{color:#7434DB}\n.lg-foot .bot{max-width:1240px;margin:0 auto;padding:18px 24px 28px;border-top:1px solid #e9e5f0;display:flex;justify-content:space-between;color:#6b7280;font-size:13px;flex-wrap:wrap;gap:12px}\n.lg-foot .bot .links{display:flex;gap:22px;flex-wrap:wrap}\n.lg-foot .bot .links a{color:#6b7280;text-decoration:none;transition:color .15s}\n.lg-foot .bot .links a:hover{color:#7434DB}\n@media (max-width:1024px){.lg-foot .inner{grid-template-columns:1fr 1fr;gap:32px}}\n@media (max-width:640px){.lg-foot .inner{grid-template-columns:1fr;padding:36px 18px 18px}.lg-foot .bot{flex-direction:column;padding:18px}}\n</style>"
+              },
+              "elements": [],
+              "widgetType": "html"
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    }
+  ],
+  "page_settings": {
+    "template": "elementor_canvas",
+    "background_background": "classic",
+    "background_color": "#FBFAFD"
+  }
+}
