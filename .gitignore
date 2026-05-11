@@ -1,0 +1,7 @@
+.env
+*.local
+node_modules/
+.claude/settings.local.json
+oauth_code*.txt
+meta_snippet.php
+seo_meta_snippet.json
