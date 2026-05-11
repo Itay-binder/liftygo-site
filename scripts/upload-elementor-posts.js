@@ -29,7 +29,12 @@ function patch(postId, body) {
   });
 }
 
-function makeHeroHTML(title, category, categorySlug, dateStr, readTime, intro) {
+function makeHeroHTML(title, category, categorySlug, dateStr, readTime, intro, coverImage) {
+  const imgHtml = coverImage ? `
+  <div class="lg-cover-wrap">
+    <img class="lg-cover-img" src="${coverImage}" alt="${title}" />
+  </div>` : '';
+
   return `<div class="lg-article-hero">
   <div class="lg-article-meta">
     <a href="https://liftygo.co.il/blog/category/${categorySlug}/" class="lg-tag">${category}</a>
@@ -37,7 +42,7 @@ function makeHeroHTML(title, category, categorySlug, dateStr, readTime, intro) {
     <span class="lg-meta-sep">·</span><span>${readTime} דקות קריאה</span>
   </div>
   <h1 class="lg-article-title">${title}</h1>
-  <p class="lg-article-intro">${intro}</p>
+  <p class="lg-article-intro">${intro}</p>${imgHtml}
 </div>
 <style>
 .lg-article-hero{padding:36px 0 20px}
@@ -45,7 +50,9 @@ function makeHeroHTML(title, category, categorySlug, dateStr, readTime, intro) {
 .lg-tag{background:#E2CCFF;color:#7434DB;padding:3px 12px;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none}
 .lg-meta-sep{color:#d1d5db}
 .lg-article-title{font-size:clamp(22px,4vw,38px);font-weight:900;color:#2D2152;line-height:1.25;margin-bottom:14px;font-family:'Rubik',sans-serif}
-.lg-article-intro{font-size:16px;color:#374151;line-height:1.75;max-width:680px;font-family:'Rubik',sans-serif}
+.lg-article-intro{font-size:16px;color:#374151;line-height:1.75;max-width:680px;font-family:'Rubik',sans-serif;margin-bottom:24px}
+.lg-cover-wrap{width:100%;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(79,29,158,.12);margin-bottom:8px}
+.lg-cover-img{width:100%;height:auto;display:block;max-height:460px;object-fit:cover}
 </style>`;
 }
 
@@ -239,7 +246,7 @@ async function processPost(postId, meta) {
   // Hero widget
   const heroWidget = {
     id: uid(), elType: 'widget', widgetType: 'html', isInner: false, elements: [],
-    settings: { html: makeHeroHTML(meta.title, meta.category, meta.categorySlug, meta.date, meta.readTime, meta.intro) }
+    settings: { html: makeHeroHTML(meta.title, meta.category, meta.categorySlug, meta.date, meta.readTime, meta.intro, meta.coverImage) }
   };
 
   // Content widget
@@ -268,7 +275,24 @@ async function processPost(postId, meta) {
 }
 
 const posts = [
-  { id: 2894, title: 'כמה עולה הובלת דירה? מדריך מחירים 2026', category: 'מדריך לקוח', categorySlug: 'moving-guides', date: 'מאי 2026', readTime: 7, intro: 'מה משפיע על המחיר, איך לא לשלם יותר מדי, ואיך לקבל הצעות מחיר ממובילים מאומתים תוך דקות.', contentHtml: content2894 }
+  {
+    id: 1792,
+    title: 'איך למצוא עבודות הובלה — המדריך למוביל המתחיל',
+    category: 'מדריך למוביל', categorySlug: 'movers-guide',
+    date: 'פברואר 2026', readTime: 6,
+    intro: 'המדריך המלא למוביל המתחיל — איך להשיג לידים, להשוות פלטפורמות, ולבנות הכנסה קבועה מהובלות.',
+    coverImage: 'https://liftygo.co.il/wp-content/uploads/2026/05/moving-jobs-guide-cover.png',
+    contentHtml: content1792
+  },
+  {
+    id: 2894,
+    title: 'כמה עולה הובלת דירה? מדריך מחירים 2026',
+    category: 'מדריך לקוח', categorySlug: 'moving-guides',
+    date: 'מאי 2026', readTime: 7,
+    intro: 'מה משפיע על המחיר, איך לא לשלם יותר מדי, ואיך לקבל הצעות מחיר ממובילים מאומתים תוך דקות.',
+    coverImage: 'https://liftygo.co.il/wp-content/uploads/2026/05/moving-cost-guide-cover.png',
+    contentHtml: content2894
+  }
 ];
 
 async function main() {
