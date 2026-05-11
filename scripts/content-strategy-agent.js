@@ -104,34 +104,70 @@ function isMovingRelated(url) {
 async function scanCompetitor(comp) {
   console.log(`Scanning ${comp.name}...`);
   const xml = await fetchUrl(comp.sitemap);
-  if (!xml) return [];
+  if (!xml) return { name: comp.name, recent: [], strength: null };
 
   let entries = extractSitemapUrls(xml);
 
-  // If it's a sitemap index, fetch the first content sitemap
-  const indexEntries = entries.filter(e => e.isSitemapIndex && e.url.includes('post'));
-  if (indexEntries.length > 0) {
-    const subXml = await fetchUrl(indexEntries[0].url);
-    if (subXml) entries = [...entries, ...extractSitemapUrls(subXml)];
-  } else if (entries.every(e => e.isSitemapIndex)) {
-    // All are sitemap indexes — try the first one
-    const subXml = await fetchUrl(entries[0]?.url || '');
-    if (subXml) entries = extractSitemapUrls(subXml);
+  // If sitemap index — fetch all content sitemaps (posts, blog, article)
+  const allIndexEntries = entries.filter(e => e.isSitemapIndex);
+  if (allIndexEntries.length > 0) {
+    const contentSitemaps = allIndexEntries.filter(e =>
+      /post|blog|article|content|page/i.test(e.url)
+    );
+    const toFetch = (contentSitemaps.length > 0 ? contentSitemaps : allIndexEntries).slice(0, 3);
+    const subResults = await Promise.all(toFetch.map(e => fetchUrl(e.url)));
+    subResults.forEach(subXml => {
+      if (subXml) entries = [...entries, ...extractSitemapUrls(subXml)];
+    });
   }
 
-  // Filter: recent (< 30 days) + moving-related
-  const recent = entries
-    .filter(e => !e.isSitemapIndex && daysSince(e.lastmod) <= 30)
-    .filter(e => isMovingRelated(e.url))
-    .sort((a, b) => daysSince(a.lastmod) - daysSince(b.lastmod))
-    .slice(0, 5);
+  const contentEntries = entries.filter(e => !e.isSitemapIndex);
+  const movingEntries  = contentEntries.filter(e => isMovingRelated(e.url));
+  const withDate       = contentEntries.filter(e => e.lastmod);
 
-  return recent.map(e => ({
-    competitor: comp.name,
-    url: e.url,
-    days: daysSince(e.lastmod),
-    slug: e.url.split('/').filter(Boolean).pop() || e.url,
-  }));
+  // Strength metrics
+  const recentAll     = withDate.filter(e => daysSince(e.lastmod) <= 30).length;
+  const recent90      = withDate.filter(e => daysSince(e.lastmod) <= 90).length;
+  const totalPages    = contentEntries.length;
+  const totalMoving   = movingEntries.length;
+  const lastestDate   = withDate.length > 0
+    ? withDate.sort((a,b) => new Date(b.lastmod)-new Date(a.lastmod))[0].lastmod.slice(0,10)
+    : null;
+
+  // Strength score (0–100)
+  let score = 0;
+  if (totalPages > 500)  score += 30;
+  else if (totalPages > 200) score += 20;
+  else if (totalPages > 50)  score += 10;
+  if (totalMoving > 50)  score += 25;
+  else if (totalMoving > 20) score += 15;
+  else if (totalMoving > 5)  score += 8;
+  if (recentAll >= 8)    score += 25;
+  else if (recentAll >= 3) score += 15;
+  else if (recentAll >= 1) score += 8;
+  if (recent90 >= 20)    score += 20;
+  else if (recent90 >= 8)  score += 12;
+  else if (recent90 >= 2)  score += 6;
+
+  const strengthLabel = score >= 70 ? '🔴 חזק מאוד' :
+                        score >= 45 ? '🟠 חזק' :
+                        score >= 25 ? '🟡 בינוני' : '🟢 חלש';
+
+  const strength = { score, label: strengthLabel, totalPages, totalMoving, recentAll, recent90, lastestDate };
+
+  // Recent moving-related posts (< 30 days)
+  const recent = movingEntries
+    .filter(e => daysSince(e.lastmod) <= 30)
+    .sort((a, b) => daysSince(a.lastmod) - daysSince(b.lastmod))
+    .slice(0, 4)
+    .map(e => ({
+      competitor: comp.name,
+      url: e.url,
+      days: daysSince(e.lastmod),
+      slug: decodeURIComponent(e.url.split('/').filter(Boolean).pop() || e.url).substring(0, 60),
+    }));
+
+  return { name: comp.name, recent, strength };
 }
 
 // ── Keyword opportunity analysis ───────────────────────────────────
@@ -212,31 +248,45 @@ function generateArticleRecommendation(opp, competitorMatch) {
 
 // ── Build WhatsApp message ─────────────────────────────────────────
 
-function buildStrategyMessage(opportunities, competitorPosts, recommendation, dateStr) {
+function buildStrategyMessage(opportunities, competitorPosts, strengthData, recommendation, dateStr) {
   const lines = [];
   lines.push(`*ניתוח תוכן אסטרטגי — LiftyGo*`);
   lines.push(`_${dateStr}_`);
   lines.push('');
 
-  // Keyword opportunities
-  const topOpps = opportunities.filter(o => o.impressions > 0).slice(0, 5);
-  if (topOpps.length > 0) {
-    lines.push(`*הזדמנויות מ-Search Console:*`);
-    topOpps.forEach(o => {
-      lines.push(`*${o.query}:* מיקום #${o.position === 999 ? '—' : o.position}, ${o.impressions} חשיפות`);
+  // Competitor strength ranking
+  if (strengthData.length > 0) {
+    lines.push(`*עוצמת המתחרים (נכון להיום):*`);
+    strengthData.forEach(c => {
+      const details = [];
+      if (c.totalPages)  details.push(`${c.totalPages} דפים`);
+      if (c.totalMoving) details.push(`${c.totalMoving} מאמרי הובלה`);
+      if (c.recentAll)   details.push(`${c.recentAll} פרסומים השבוע`);
+      else               details.push(`לא פרסמו ב-30 יום`);
+      lines.push(`*${c.name}:* ${c.label} — ${details.join(', ')}`);
     });
     lines.push('');
   }
 
-  // Competitor recent posts
+  // Recent competitor posts
   if (competitorPosts.length > 0) {
-    lines.push(`*מה המתחרים פרסמו לאחרונה:*`);
+    lines.push(`*פרסומים חדשים ב-30 ימים האחרונים:*`);
     competitorPosts.slice(0, 6).forEach(p => {
-      lines.push(`• ${p.competitor}: ${p.slug} (לפני ${p.days} ימים)`);
+      lines.push(`• ${p.competitor}: _${p.slug}_ (לפני ${p.days} ימים)`);
     });
     lines.push('');
   } else {
-    lines.push(`*מתחרים:* לא נמצאו פרסומים חדשים ב-30 ימים האחרונים`);
+    lines.push(`*פרסומים חדשים:* לא נמצאו פרסומי הובלה חדשים אצל המתחרים`);
+    lines.push('');
+  }
+
+  // Keyword opportunities
+  const topOpps = opportunities.filter(o => o.impressions > 0).slice(0, 5);
+  if (topOpps.length > 0) {
+    lines.push(`*הזדמנויות ב-Search Console:*`);
+    topOpps.forEach(o => {
+      lines.push(`*${o.query}:* מיקום #${o.position}, ${o.impressions} חשיפות`);
+    });
     lines.push('');
   }
 
@@ -249,7 +299,7 @@ function buildStrategyMessage(opportunities, competitorPosts, recommendation, da
   lines.push(`*מילת מפתח:* ${opp.query}`);
 
   const reason = opp.impressions > 0
-    ? `${opp.impressions} חשיפות, מיקום #${opp.position} — פוטנציאל לPage 1`
+    ? `${opp.impressions} חשיפות בגוגל, מיקום #${opp.position} — פוטנציאל לעמוד ראשון`
     : recommendation.competitorMatch
       ? `המתחרים כבר כותבים על זה — חשוב להיות שם`
       : `מילת מפתח לא מכוסה, ערך SEO גבוה`;
@@ -303,7 +353,10 @@ async function main() {
   // Scan competitors in parallel
   console.log('Scanning competitors...');
   const competitorResults = await Promise.all(COMPETITORS.map(c => scanCompetitor(c)));
-  const competitorPosts   = competitorResults.flat().sort((a, b) => a.days - b.days);
+  const competitorPosts   = competitorResults.flatMap(r => r.recent).sort((a, b) => a.days - b.days);
+  const strengthData      = competitorResults.map(r => ({ name: r.name, ...r.strength }))
+    .filter(r => r.score !== undefined)
+    .sort((a, b) => b.score - a.score);
   console.log(`Found ${competitorPosts.length} recent competitor posts`);
 
   // Pick best article recommendation
@@ -311,7 +364,7 @@ async function main() {
   console.log('Recommended article:', generateArticleRecommendation(recommendation.opportunity).title);
 
   // Build and send message
-  const message = buildStrategyMessage(opportunities, competitorPosts, recommendation, dateStr);
+  const message = buildStrategyMessage(opportunities, competitorPosts, strengthData, recommendation, dateStr);
   console.log('\n--- Strategy message ---\n' + message + '\n---');
 
   const waResult = await sendWhatsApp(message);
