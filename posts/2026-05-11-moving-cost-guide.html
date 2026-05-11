@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>כמה עולה הובלת דירה? מדריך מחירים 2026 | LiftyGo</title>
+  <!-- META: כמה עולה הובלת דירה? 3 חדרים 1,200–2,200 ₪ | 4 חדרים 1,800–3,500 ₪. מה משפיע על המחיר, טיפים לחיסכון, והשוואת הצעות מחיר בחינם. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --p1: #4f1d9e;
+      --p2: #7434db;
+      --p3: #a855f7;
+      --hero-bg: linear-gradient(135deg, #0a0520 0%, #1a0a42 45%, #3d1a8e 100%);
+      --cta-bg: linear-gradient(135deg, #1a0a42 0%, #4f1d9e 100%);
+      --btn-grad: linear-gradient(135deg, #7434db, #4f1d9e);
+      --text: #1a1030;
+      --body: #374151;
+      --muted: #6b7280;
+      --surface: #f8f7ff;
+      --border: rgba(116, 52, 219, 0.14);
+      --glow: 0 0 40px rgba(116, 52, 219, 0.35);
+      --shadow-sm: 0 4px 24px rgba(79, 29, 158, 0.08);
+      --shadow-md: 0 8px 32px rgba(79, 29, 158, 0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--body);
+      background: #fff;
+      direction: rtl;
+      text-align: right;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Sticky Nav ───────────────────────────────────────────────── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(116, 52, 219, 0.1);
+      box-shadow: 0 2px 20px rgba(79, 29, 158, 0.07);
+    }
+    .nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 900;
+      background: var(--btn-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-link {
+      color: var(--body);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-link:hover { background: rgba(116, 52, 219, 0.07); color: var(--p2); }
+    .nav-cta {
+      background: var(--btn-grad);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 9px 22px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(116, 52, 219, 0.3);
+      transition: opacity 0.15s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── Hero ────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--hero-bg);
+      padding: 72px 28px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(116,52,219,0.22) 0%, transparent 70%);
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(168,85,247,0.18) 0%, transparent 70%);
+      bottom: -60px; left: 80px;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(28px, 5.5vw, 52px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hl {
+      background: rgba(168, 85, 247, 0.35);
+      border-radius: 8px;
+      padding: 2px 10px;
+      color: #fff;
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      flex-wrap: wrap;
+    }
+
+    /* ── Page wrap ───────────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Quick answer ────────────────────────────────────────────── */
+    .quick-box {
+      background: rgba(79, 29, 158, 0.05);
+      border-right: 4px solid var(--p2);
+      border-radius: 0 12px 12px 0;
+      padding: 22px 26px;
+      margin: 48px 0;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--body);
+    }
+    .quick-box strong { color: var(--p1); }
+
+    /* ── Sections ────────────────────────────────────────────────── */
+    .content-section { margin-bottom: 60px; }
+
+    h2 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .section-lead { color: var(--muted); font-size: 16px; margin-bottom: 28px; line-height: 1.7; }
+    p { line-height: 1.8; font-size: 16px; margin-bottom: 16px; }
+
+    /* ── Factor cards — Glassmorphism ────────────────────────────── */
+    .factors-grid { display: grid; gap: 14px; }
+    .factor-card {
+      display: flex;
+      gap: 18px;
+      padding: 22px 24px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .factor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(116, 52, 219, 0.3);
+    }
+    .factor-num {
+      width: 40px; height: 40px; min-width: 40px;
+      border-radius: 50%;
+      background: var(--btn-grad);
+      box-shadow: 0 0 18px rgba(116, 52, 219, 0.4);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .factor-body h3 { margin-bottom: 5px; }
+    .factor-body p { font-size: 15px; color: var(--body); margin: 0; line-height: 1.7; }
+
+    /* ── Pricing table ───────────────────────────────────────────── */
+    .table-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    thead th {
+      background: var(--cta-bg);
+      color: #fff;
+      font-weight: 700;
+      padding: 15px 22px;
+      text-align: right;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
+    tbody tr { background: #fff; }
+    tbody tr:nth-child(even) { background: rgba(79, 29, 158, 0.03); }
+    tbody td { padding: 14px 22px; border-bottom: 1px solid rgba(116, 52, 219, 0.07); }
+    tbody tr:last-child td { border-bottom: none; }
+    .price-val { font-weight: 800; color: var(--p2); }
+    .table-note { font-size: 13px; color: var(--muted); margin-top: 12px; padding-right: 4px; }
+
+    /* ── Inline CTA ──────────────────────────────────────────────── */
+    .cta-inline {
+      background: var(--cta-bg);
+      border-radius: 20px;
+      padding: 40px 36px;
+      text-align: center;
+      margin: 48px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-inline::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(116,52,219,0.4), transparent 70%);
+      top: -150px; left: 50%;
+      transform: translateX(-50%);
+    }
+    .cta-inline > * { position: relative; z-index: 1; }
+    .cta-inline h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .cta-inline p { font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+    .cta-btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--p1);
+      font-weight: 800;
+      font-size: 16px;
+      padding: 14px 38px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .cta-btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+
+    /* ── Tips ────────────────────────────────────────────────────── */
+    .tips-list { display: grid; gap: 12px; }
+    .tip-row {
+      display: flex;
+      gap: 16px;
+      padding: 18px 22px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      align-items: flex-start;
+    }
+    .tip-dot {
+      width: 8px; height: 8px; min-width: 8px;
+      border-radius: 50%;
+      background: var(--btn-grad);
+      box-shadow: 0 0 8px rgba(116,52,219,0.5);
+      margin-top: 9px;
+    }
+    .tip-content { font-size: 15px; line-height: 1.7; }
+    .tip-content strong { color: var(--text); display: block; margin-bottom: 2px; font-weight: 700; }
+
+    /* ── FAQ ─────────────────────────────────────────────────────── */
+    .faq-list { display: grid; gap: 10px; }
+    .faq-item {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: var(--shadow-sm); }
+    .faq-q {
+      width: 100%; background: transparent; border: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 18px 22px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--text);
+      text-align: right; direction: rtl;
+      cursor: pointer;
+    }
+    .faq-icon {
+      width: 26px; height: 26px; min-width: 26px;
+      border-radius: 50%;
+      border: 2px solid var(--p2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--p2);
+      font-size: 18px; font-weight: 300; line-height: 1;
+      transition: background 0.15s, color 0.15s;
+    }
+    .faq-q.open .faq-icon { background: var(--p2); color: #fff; }
+    .faq-a {
+      display: none;
+      padding: 0 22px 18px;
+      font-size: 15px; color: var(--body); line-height: 1.75;
+      border-top: 1px solid rgba(116,52,219,0.08);
+    }
+    .faq-a.open { display: block; }
+
+    /* ── Bottom CTA ──────────────────────────────────────────────── */
+    .post-cta {
+      background: var(--hero-bg);
+      border-radius: 24px;
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(116,52,219,0.3), transparent 70%);
+      top: -200px; left: 50%; transform: translateX(-50%);
+    }
+    .post-cta > * { position: relative; z-index: 1; }
+    .post-cta h2 { color: #fff; margin-bottom: 12px; }
+    .post-cta .sub { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 30px; }
+    .cta-btn-primary {
+      display: inline-block;
+      background: #fff;
+      color: var(--p1);
+      font-weight: 900;
+      font-size: 18px;
+      padding: 17px 48px;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2), var(--glow);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.25), var(--glow); }
+    .trust-line { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 16px; }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .nav-link:not(.nav-cta) { display: none; }
+      .hero { padding: 52px 20px 48px; }
+      .page-wrap { padding: 0 16px 60px; }
+      .factor-card { flex-direction: column; gap: 10px; }
+      .cta-inline { padding: 28px 20px; }
+      .post-cta { padding: 40px 20px; }
+      thead th, tbody td { padding: 12px 14px; font-size: 14px; }
+    }
+    @media (max-width: 400px) {
+      .nav-cta { padding: 7px 14px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ─────────────────────────────────────────────────────── -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="https://liftygo.co.il/" class="nav-logo">LiftyGo</a>
+    <div class="nav-links">
+      <a href="https://liftygo.co.il/" class="nav-link">הזמנת הובלה</a>
+      <a href="https://liftygo.co.il/joinus/" class="nav-link">הצטרפות מובילים</a>
+      <a href="https://liftygo.co.il/blog/" class="nav-link">בלוג</a>
+      <a href="https://liftygo.co.il/" class="nav-cta">קבלו הצעת מחיר</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="category-badge">מדריך לקוח · 2026</div>
+    <h1>כמה עולה <span class="hl">הובלת דירה?</span><br>מדריך מחירים עדכני</h1>
+    <p class="hero-sub">מה משפיע על המחיר, איך לא לשלם יותר מדי, ואיך לקבל הצעות מחיר ממובילים מאומתים תוך דקות.</p>
+    <div class="hero-meta">
+      <span>LiftyGo</span>
+      <span>מאי 2026</span>
+      <span>7 דקות קריאה</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Content ─────────────────────────────────────────────────── -->
+<div class="page-wrap">
+
+  <!-- Quick answer -->
+  <div class="quick-box">
+    מחיר הובלת דירה נע בין <strong>600 ₪ לדירה קטנה</strong> לבין <strong>8,000 ₪ ומעלה לבית פרטי</strong>. דירת 3 חדרים עולה בממוצע 1,200–2,500 ₪ ודירת 4 חדרים 1,800–3,500 ₪. הפער בין הצעות שונות יכול להגיע ל-50% — ולא תמיד הזולה ביותר היא הכדאית ביותר. מה שקובע את המחיר הוא שילוב של 6 גורמים שמסבירים להלן.
+  </div>
+
+  <!-- Section 1: Factors -->
+  <section class="content-section">
+    <h2>מה משפיע על מחיר ההובלה?</h2>
+    <p class="section-lead">שישה גורמים עיקריים קובעים כמה תשלמו — הבנת כל אחד תעזור לכם להשוות הצעות נכון.</p>
+
+    <div class="factors-grid">
+      <div class="factor-card">
+        <div class="factor-num">1</div>
+        <div class="factor-body">
+          <h3>גודל הדירה ונפח החפצים</h3>
+          <p>זה הגורם הדומיננטי ביותר. דירה גדולה יותר = יותר ריהוט = משאית גדולה יותר + שעות עבודה נוספות. ריהוט כבד כמו ארון בגדים ענק, ספה, או פסנתר מייקר את ההובלה משמעותית.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-num">2</div>
+        <div class="factor-body">
+          <h3>קומה וגישה לבניין</h3>
+          <p>קומה ראשונה עם מעלית — שקטה. קומה חמישית בלי מעלית — קפיצה משמעותית במחיר. מובילים גובים תוספת לפי מספר קומות ("תוספת קומות") וגם לפי מרחק הליכה מהמשאית לכניסה.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-num">3</div>
+        <div class="factor-body">
+          <h3>מרחק בין הנקודות</h3>
+          <p>הובלה בתוך אותה עיר נחשבת לוקאלית ומחירה נמוך יחסית. הובלה בין ערים (תל אביב–חיפה) תכלול גם עלות נסיעה, שעות נהיגה, ולעיתים לינה. ודאו שה"מרחק" כלול בהצעה.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-num">4</div>
+        <div class="factor-body">
+          <h3>פירוק ורכבה</h3>
+          <p>ארון מורכב, מיטה עם מנגנון, מטבח שצריך לפרק — כל אחד מוסיף זמן. הגדירו מראש מה אתם מצפים שהמוביל יפרק, מה תכינו מראש, ומה תרכיבו לבד. ודאו מה כלול במחיר.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-num">5</div>
+        <div class="factor-body">
+          <h3>עיתוי ועונתיות</h3>
+          <p>סוף חודש (תאריכים 28–1) הוא שיא הביקוש — המחירים עולים ב-15–30%. גם חופשות קיץ וחגים מייקרים. אמצע חודש בימות החול (שני–חמישי) נותן את המחירים הזולים ביותר.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-num">6</div>
+        <div class="factor-body">
+          <h3>שירותים נוספים</h3>
+          <p>אריזת קופסאות, עגורן לקומות גבוהות, פינוי פסולת, אחסון זמני — כל שירות שמחוץ להוצאה-טעינה-פריקה בסיסית מוסיף לחשבון. שאלו מה כלול ומה בא בנפרד.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Pricing table -->
+  <section class="content-section">
+    <h2>טווחי מחירים לפי גודל דירה — 2026</h2>
+    <p class="section-lead">ממוצעים לאזור המרכז, הובלה לוקאלית, קומות נגישות, ללא שירותים נוספים.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>גודל הדירה</th>
+            <th>טווח מחירים</th>
+            <th>מה כלול בד"כ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>סטודיו / חדר + מטבחון</td><td class="price-val">600 – 1,000 ₪</td><td>2 פועלים, משאית קטנה</td></tr>
+          <tr><td>2 חדרים</td><td class="price-val">900 – 1,500 ₪</td><td>2 פועלים, 3–4 שעות</td></tr>
+          <tr><td>3 חדרים</td><td class="price-val">1,200 – 2,500 ₪</td><td>2–3 פועלים, יום עבודה</td></tr>
+          <tr><td>4 חדרים</td><td class="price-val">1,800 – 3,500 ₪</td><td>3 פועלים, יום מלא</td></tr>
+          <tr><td>5 חדרים</td><td class="price-val">2,500 – 5,000 ₪</td><td>3–4 פועלים, לעיתים יומיים</td></tr>
+          <tr><td>בית פרטי / קוטג'</td><td class="price-val">4,000 – 10,000 ₪</td><td>צוות מלא, ציוד כבד</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">* מחירים משתנים לפי קומה, עיר יעד, עיתוי ושירותים נוספים.</p>
+  </section>
+
+  <!-- Inline CTA -->
+  <div class="cta-inline">
+    <h3>במקום לנחש — קבלו הצעות מחיר אמיתיות</h3>
+    <p>ממלאים שאלון קצר אחד. מקבלים הצעות מ-3 מובילים מאומתים. בוחרים ונעים.</p>
+    <a href="https://liftygo.co.il/" class="cta-btn-white">קבלו הצעת מחיר חינם</a>
+  </div>
+
+  <!-- Section 3: Tips -->
+  <section class="content-section">
+    <h2>5 דרכים לחסוך בהובלה בלי להתפשר</h2>
+    <p class="section-lead">טיפים פרקטיים שיכולים לחסוך לכם מאות שקלים.</p>
+    <div class="tips-list">
+      <div class="tip-row">
+        <div class="tip-dot"></div>
+        <div class="tip-content"><strong>הזמינו באמצע החודש</strong>תאריכים 10–20 הם הזולים ביותר. סוף חודש = שיא ביקוש = מחיר גבוה.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-dot"></div>
+        <div class="tip-content"><strong>קבלו לפחות 3 הצעות מחיר</strong>הפערים יכולים להגיע ל-40–50% לאותה עבודה בדיוק. השוואה היא הדרך הבטוחה לתמחור הוגן.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-dot"></div>
+        <div class="tip-content"><strong>ארזו לבד את מה שאפשר</strong>קופסאות ספרים, בגדים, כלי מטבח — כל אריזה שאתם עושים מראש מקצרת שעות עבודה ומורידה עלות.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-dot"></div>
+        <div class="tip-content"><strong>פנו רהיטים שלא עוברים</strong>פחות נפח = משאית קטנה יותר + פחות שעות = חיסכון ישיר.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-dot"></div>
+        <div class="tip-content"><strong>הגדירו הכל בכתב מראש</strong>כל מה שלא מפורט בהסכם יכול להפוך לתוספת גדולה. רשמו את כל הפריטים הכבדים מראש.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section">
+    <h2>שאלות נפוצות</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">האם מובילים גובים לפי שעה או לפי הובלה?<span class="faq-icon">+</span></button>
+        <div class="faq-a">רוב המובילים בישראל מתמחרים לפי הובלה שלמה (מחיר פאושלי) — מה שנותן ודאות על המחיר הסופי. חלקם גובים לפי שעה לעבודות קטנות. חשוב לשאול מראש ולוודא שהמחיר שסוכם הוא הסופי ולא בסיס לתוספות.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">מתי הכי יקר לעשות הובלה?<span class="faq-icon">+</span></button>
+        <div class="faq-a">שלושה שיאי ביקוש: (1) סוף חודש — תאריכים 28–1, (2) חופשת קיץ יולי–אוגוסט, (3) ערב חגים. בתקופות אלו המחיר עולה ב-15–30% ולעיתים קשה לתאם בכלל. אם יש גמישות בתאריך — בחרו אמצע חודש בחורף.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">האם הביטוח כלול במחיר ההובלה?<span class="faq-icon">+</span></button>
+        <div class="faq-a">לרוב — לא אוטומטית. מובילים רבים מציעים ביטוח תוכן כתוספת. חפצים יקרים שווה לבטח בנפרד. שאלו את המוביל מה קורה אם נפגע ריהוט — ודאו שיש אחריות כלשהי בכתב.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <div class="post-cta">
+    <h2>מוכנים להתחיל?</h2>
+    <p class="sub">שאלון קצר אחד. הצעות מחיר מ-3 מובילים מאומתים. אתם בוחרים. בלי ניחושים, בלי הפתעות.</p>
+    <a href="https://liftygo.co.il/" class="cta-btn-primary">קבלו הצעות מחיר עכשיו</a>
+    <p class="trust-line">חינם לחלוטין · ללא התחייבות · מובילים מאומתים בלבד</p>
+  </div>
+
+</div>
+
+<script>
+function toggleFaq(btn) {
+  const a = btn.nextElementSibling;
+  const open = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => { x.classList.remove('open'); x.querySelector('.faq-icon').textContent = '+'; });
+  if (!open) { a.classList.add('open'); btn.classList.add('open'); btn.querySelector('.faq-icon').textContent = '−'; }
+}
+</script>
+</body>
+</html>
