@@ -58,18 +58,19 @@ jobs:
         run: npm install -g @anthropic-ai/claude-code
 
       - name: Agent 3 — Article Writer
+        continue-on-error: true
         run: |
-          claude --print --no-update-notification \
-            "Working directory: $(pwd). The .env file is already created with all credentials. All environment variables are already set in the shell.
+          claude -p "Working directory: $(pwd). The .env file is already created with all credentials. All environment variables are already set in the shell.
 
           Follow the skill at .claude/skills/article-writer.md exactly, step by step:
           1. Read reports/content-recommendation-latest.json
           2. Check if the slug already exists on WordPress
           3. Write a full Hebrew SEO article (900-1200 words) using the structure in the skill
-          4. Upload to WordPress with the Elementor template (see scripts/upload-elementor-posts.js for the pattern)
-          5. Add to noindex snippet 5, add meta tags to snippet 8
-          6. Run: node scripts/create-blog-page.js
-          7. Send WhatsApp notification via GreenAPI
+          4. Use the design system from .claude/skills/liftygo-design.md — Heebo font, #2D2152 headings, purple gradient buttons, light background, no glow, RTL
+          5. Upload to WordPress with the Elementor template (see scripts/upload-elementor-posts.js for the pattern)
+          6. Add to noindex snippet 5, add meta tags to snippet 8
+          7. Run: node scripts/create-blog-page.js
+          8. Send WhatsApp notification via GreenAPI
 
           Do NOT run git commands — the next step handles the commit."
 
