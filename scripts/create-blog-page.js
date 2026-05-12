@@ -145,7 +145,8 @@ const BLOG_CONTENT = `<link href="https://fonts.googleapis.com/css2?family=Rubik
         </a>
 
         <a href="https://liftygo.co.il/how-to-choose-movers/" class="article-card" style="text-decoration:none">
-          <div class="card-thumb thumb-guides" style="background:linear-gradient(135deg,#4f1d9e,#7434db)">
+          <div class="card-thumb" style="background:#4f1d9e;padding:0;overflow:hidden">
+            <img src="https://liftygo.co.il/wp-content/uploads/2026/05/ChatGPT-Image-May-12-2026-11_50_08-AM.png" alt="איך לבחור מוביל דירה" style="width:100%;height:100%;object-fit:cover;display:block">
             <span class="card-cat">מדריכים · טיפים</span>
           </div>
           <div class="card-body">
@@ -176,7 +177,8 @@ const BLOG_CONTENT = `<link href="https://fonts.googleapis.com/css2?family=Rubik
           </div>
         </a>
         <a href="https://liftygo.co.il/how-to-choose-movers/" class="article-card" style="text-decoration:none">
-          <div class="card-thumb thumb-guides" style="background:linear-gradient(135deg,#4f1d9e,#7434db)">
+          <div class="card-thumb" style="background:#4f1d9e;padding:0;overflow:hidden">
+            <img src="https://liftygo.co.il/wp-content/uploads/2026/05/ChatGPT-Image-May-12-2026-11_50_08-AM.png" alt="איך לבחור מוביל דירה" style="width:100%;height:100%;object-fit:cover;display:block">
             <span class="card-cat">טיפים להובלה</span>
           </div>
           <div class="card-body">
@@ -235,7 +237,8 @@ const BLOG_CONTENT = `<link href="https://fonts.googleapis.com/css2?family=Rubik
         </a>
 
         <a href="https://liftygo.co.il/how-to-choose-movers/" class="article-card" style="text-decoration:none">
-          <div class="card-thumb thumb-guides" style="background:linear-gradient(135deg,#4f1d9e,#7434db)">
+          <div class="card-thumb" style="background:#4f1d9e;padding:0;overflow:hidden">
+            <img src="https://liftygo.co.il/wp-content/uploads/2026/05/ChatGPT-Image-May-12-2026-11_50_08-AM.png" alt="איך לבחור מוביל דירה" style="width:100%;height:100%;object-fit:cover;display:block">
             <span class="card-cat">מדריכים</span>
           </div>
           <div class="card-body">
