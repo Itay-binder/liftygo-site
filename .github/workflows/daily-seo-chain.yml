@@ -1,0 +1,84 @@
+name: Daily SEO Chain — Agent 1→2→3
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 08:00 Israel time (IDT = UTC+3)
+  workflow_dispatch:        # manual trigger from GitHub UI → Actions tab
+
+jobs:
+  seo-chain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      GOOGLE_CLIENT_ID:     ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GREENAPI_INSTANCE:    ${{ secrets.GREENAPI_INSTANCE }}
+      GREENAPI_TOKEN:       ${{ secrets.GREENAPI_TOKEN }}
+      WA_TARGET:            ${{ secrets.WA_TARGET }}
+      GSC_SITE:             ${{ secrets.GSC_SITE }}
+      ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Create .env file
+        run: |
+          printf 'GOOGLE_CLIENT_ID=%s\n'     "$GOOGLE_CLIENT_ID"     > .env
+          printf 'GOOGLE_CLIENT_SECRET=%s\n' "$GOOGLE_CLIENT_SECRET" >> .env
+          printf 'GOOGLE_REFRESH_TOKEN=%s\n' "$GOOGLE_REFRESH_TOKEN" >> .env
+          printf 'GREENAPI_INSTANCE=%s\n'    "$GREENAPI_INSTANCE"    >> .env
+          printf 'GREENAPI_TOKEN=%s\n'       "$GREENAPI_TOKEN"       >> .env
+          printf 'WA_TARGET=%s\n'            "$WA_TARGET"            >> .env
+          printf 'GSC_SITE=%s\n'             "$GSC_SITE"             >> .env
+
+      - name: Create reports directory
+        run: mkdir -p reports
+
+      # ── Agent 1 ──────────────────────────────────────────────────────
+      - name: Agent 1 — Daily SEO Check
+        run: node scripts/daily-seo-check.js
+        continue-on-error: true   # Agent 2 runs regardless
+
+      # ── Agent 2 ──────────────────────────────────────────────────────
+      - name: Agent 2 — Content Strategy
+        run: node scripts/content-strategy-agent.js
+
+      # ── Agent 3 ──────────────────────────────────────────────────────
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Agent 3 — Article Writer
+        run: |
+          claude --print --no-update-notification \
+            "Working directory: $(pwd). The .env file is already created with all credentials. All environment variables are already set in the shell.
+
+          Follow the skill at .claude/skills/article-writer.md exactly, step by step:
+          1. Read reports/content-recommendation-latest.json
+          2. Check if the slug already exists on WordPress
+          3. Write a full Hebrew SEO article (900-1200 words) using the structure in the skill
+          4. Upload to WordPress with the Elementor template (see scripts/upload-elementor-posts.js for the pattern)
+          5. Add to noindex snippet 5, add meta tags to snippet 8
+          6. Run: node scripts/create-blog-page.js
+          7. Send WhatsApp notification via GreenAPI
+
+          Do NOT run git commands — the next step handles the commit."
+
+      # ── Commit changes ────────────────────────────────────────────────
+      - name: Commit and push changes
+        run: |
+          git config user.name "LiftyGo SEO Bot"
+          git config user.email "liftygo.service@gmail.com"
+          git add seo/snippets/ scripts/create-blog-page.js posts/ 2>/dev/null || true
+          git diff --cached --quiet && echo "Nothing to commit" || \
+            git commit -m "feat: daily SEO chain — $(date +'%Y-%m-%d')"
+          git push origin master || true
